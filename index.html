@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="imagenes/png" href="imagenes/Termómetro.png ">
+  <title>controlador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<header>
+  <center>
+    <img class="no-click" src="Superior.png" alt="" width="100%">
+  </center>
+</header>
+
+<body>
+  <center>
+    <img width=250px id="imtm" class="img" src="Termómetro.png" alt="temperatura" onclick="temp()">
+    <img width=250px id="imum" class="img" src="Gota.png" alt="humedad" onclick="hum()">
+
+  </center>
+
+  <div id="ilus">
+    <div id="espacio">
+        <img id="imgt" class="pajaro" src="temp/20°C.png" alt="negro">
+        <img id="imgh" class="hum" src="hum/20%.png" alt="negro2">
+        <p id="response"></p>
+    </div>
+  </div>
+
+      <script>
+
+        function hum() {
+          let hum = prompt("elegir humedad");
+          let hum20 = "hum/20%.png";
+          let hum30 = "hum/30%.png";
+          let hum40 = "hum/40%.png";
+          let hum50 = "hum/50%.png";
+          let hum60 = "hum/60%.png";
+          let hum70 = "hum/70%.png";
+          var imagenElement = document.getElementById("imgh");
+          while (hum < 10 || hum > 90 || isNaN(hum) || hum == null || hum === "") {
+            alert("elegir un numero valido");
+            hum = prompt("elegir humedad");
+          }
+
+          p = document.getElementById("response");
+          p.innerHTML = hum;
+          document.body.appendChild(p);
+
+          if (hum <= 20) {
+            imagenElement.src = hum20;
+            imagenElement.style.transform = "translate(-90%, 600%)";
+
+          }
+          else if (hum > 20 && hum <30) {
+            imagenElement.src = hum30;
+            imagenElement.style.transform = "translate(-40%, 300%)";
+
+          }
+          else if (hum >= 30 && hum <40) {
+            imagenElement.src = hum40;
+            imagenElement.style.transform = "translate(-50%, 270%)";
+
+          }
+          else if (hum >= 40 && hum <50) {
+            imagenElement.src = hum50;
+            imagenElement.style.transform = "translate(-10%, 220%)";
+
+          }
+          else if (hum >= 50 && hum <60) {
+            imagenElement.src = hum60;
+            imagenElement.style.transform = "translate(-40%, 160%)";
+
+          }
+          else  if (hum > 60) {
+            imagenElement.src = hum70;
+            imagenElement.style.transform = "translate(-50%, 57%)";
+
+          }
+
+        }
+
+
+
+        function temp() {
+          var imagenElement = document.getElementById("imgt");
+          var tm20 = "temp/20°C.png";
+          var tm30 = "temp/30°C.png";
+          var tm40 = "temp/40°C.png";
+          let temp = prompt("elegir temperatura");
+          while (temp < -10 || temp > 90 || isNaN(temp) || temp == null || temp === "") {
+            alert("elegir un numero valido");
+            temp = prompt("elegir humedad");
+          }
+
+          p = document.getElementById("response");
+          p.innerHTML = temp;
+          document.body.appendChild(p);
+
+          if (temp < 20) {
+            imagenElement.src = tm20;
+            imagenElement.style.transform = "translate(-46%, 55%)";
+
+          }
+          else if (temp >= 20 && temp <40) {
+            imagenElement.src = tm30;
+            imagenElement.style.transform = "translate(-48%, 17%)";
+
+          }
+          else  if (temp > 40) {
+            imagenElement.src = tm40;
+            imagenElement.style.transform = "translate(-48%, 14%)";
+
+          }
+        
+        }
+        
+      </script>
+
+</body>
+
+</html>
