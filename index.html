@@ -24,8 +24,8 @@
 
   <div id="ilus">
     <div id="espacio">
-        <img id="imgt" class="pajaro" src="./temp/20°C.png" alt="negro">
-        <img id="imgh" class="hum" src="./hum/20%.png" alt="negro2">
+        <img id="imgt" class="pajaro" src="temp/20°C.png" alt="negro">
+        <img id="imgh" class="hum" src="hum/20.png" alt="negro2">
         <p id="response"></p>
     </div>
   </div>
@@ -34,12 +34,12 @@
 
         function hum() {
           let hum = prompt("elegir humedad");
-          let hum20 = "hum/20%.png";
-          let hum30 = "hum/30%.png";
-          let hum40 = "hum/40%.png";
-          let hum50 = "hum/50%.png";
-          let hum60 = "hum/60%.png";
-          let hum70 = "hum/70%.png";
+          let hum20 = "hum/20.png";
+          let hum30 = "hum/30.png";
+          let hum40 = "hum/40.png";
+          let hum50 = "hum/50.png";
+          let hum60 = "hum/60.png";
+          let hum70 = "hum/70.png";
           var imagenElement = document.getElementById("imgh");
           while (hum < 10 || hum > 90 || isNaN(hum) || hum == null || hum === "") {
             alert("elegir un numero valido");
